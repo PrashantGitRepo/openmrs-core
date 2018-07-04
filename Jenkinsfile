@@ -23,7 +23,7 @@ pipeline {
 		bat 'COPY /Y E:\\pipeline-workspace\\open-mrs\\webapp\\target\\openmrs.war C:\\apache-tomcat-7.0.88\\webapps'
       }
     }
-	stage('start war') {
+	stage('Start Tomcat Server') {
 	  steps {
 		bat 'CALL C:\\apache-tomcat-7.0.88\\bin\\startup.bat'
 		bat 'PAUSE'
