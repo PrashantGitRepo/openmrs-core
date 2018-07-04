@@ -4,7 +4,7 @@ pipeline {
     stage('Code Checkout') {
       steps {
         ws(dir: 'E:\\pipeline-workspace\\open-mrs') {
-          git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', changelog: true, branch: 'master')
+          git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', changelog: true, branch: 'master', poll: true)
         }
 
       }
