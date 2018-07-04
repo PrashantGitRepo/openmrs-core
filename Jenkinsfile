@@ -17,11 +17,6 @@ pipeline {
         fileExists 'openmrs.war'
       }
     }
-    stage('Cleanup') {
-      steps {
-        cleanWs(cleanWhenSuccess: true)
-      }
-    }
   }
   environment {
     App_Dir = 'E:\\pipeline-workspace\\open-mrs\\'
