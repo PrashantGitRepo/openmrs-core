@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Code Checkout') {
       steps {
-        ws(dir: 'E:\\pipeline-workspace\\open-mrs') {
+        ws(dir: '%App_Dir%') {
           git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', branch: 'master')
         }
 
@@ -11,12 +11,15 @@ pipeline {
     }
     stage('Build The Code') {
       steps {
-        dir(path: 'E:\\pipeline-workspace\\open-mrs') {
+        dir(path: '%App_Dir%') {
           bat 'mvn clean compile package -DskipTests'
           fileExists 'openmrs.war'
         }
 
       }
     }
+  }
+  environment {
+    App_Dir = 'E:\\pipeline-workspace\\open-mrs\\'
   }
 }
