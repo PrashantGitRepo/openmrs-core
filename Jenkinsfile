@@ -20,6 +20,7 @@ pipeline {
     stage('Deploy war') {
       steps {
         bat 'CD E:\\pipeline-workspace\\open-mrs'
+		bat 'COPY \Y E:\\pipeline-workspace\\open-mrs\\webapp\\target\\openmrs.war C:\apache-tomcat-7.0.88\webapps'
       }
     }
   }
