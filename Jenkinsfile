@@ -3,8 +3,10 @@ pipeline {
   stages {
     stage('Code Checkout') {
       steps {
-        bat 'cd %App_Dir%'
-        git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', branch: 'master')
+        ws(dir: '%App_Dir%') {
+          git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', branch: 'master')
+        }
+
       }
     }
     stage('Building Code') {
