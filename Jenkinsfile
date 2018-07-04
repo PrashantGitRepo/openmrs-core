@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Build The Code') {
       steps {
-        dir(path: 'E:\\pipeline-workspace\\openmrs-core\\') {
+        dir(path: 'E:\\pipeline-workspace\\') {
           bat 'mvn clean compile package -DskipTests'
           fileExists 'openmrs.war'
         }
