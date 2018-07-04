@@ -23,6 +23,11 @@ pipeline {
 		bat 'COPY /Y E:\\pipeline-workspace\\open-mrs\\webapp\\target\\openmrs.war C:\\apache-tomcat-7.0.88\\webapps'
       }
     }
+	stage('start war') {
+	  steps {
+		bat 'CALL C:\\apache-tomcat-7.0.88\\bin\\startup.bat'
+	  }
+	}
   }
   environment {
     App_Dir = 'E:\\pipeline-workspace\\open-mrs\\'
