@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Building Code') {
       steps {
-        bat(script: 'CD E:\\pipeline-workspace\\open-mrs', returnStatus: true)
+		bat 'CD E:\\pipeline-workspace\\open-mrs'
         bat 'mvn clean compile package -DskipTests'
         fileExists 'openmrs.war'
       }
