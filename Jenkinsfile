@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Code Checkout') {
       steps {
-        ws(dir: '$App_Dir;/open-mrs') {
+        ws(dir: '$App_Dir/open-mrs') {
           git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', changelog: true, branch: 'master')
         }
 
