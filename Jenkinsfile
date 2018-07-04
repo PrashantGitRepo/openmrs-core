@@ -17,6 +17,11 @@ pipeline {
         fileExists 'openmrs.war'
       }
     }
+    stage('Deploy war') {
+      steps {
+        bat 'CD E:\\pipeline-workspace\\open-mrs'
+      }
+    }
   }
   environment {
     App_Dir = 'E:\\pipeline-workspace\\open-mrs\\'
