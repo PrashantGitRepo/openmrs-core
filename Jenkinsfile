@@ -26,6 +26,7 @@ pipeline {
 	stage('start war') {
 	  steps {
 		bat 'CALL C:\\apache-tomcat-7.0.88\\bin\\startup.bat'
+		bat 'PAUSE'
 	  }
 	}
   }
