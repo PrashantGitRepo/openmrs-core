@@ -4,7 +4,7 @@ pipeline {
     stage('Code Checkout') {
       steps {
         bat 'echo "...... Creating workspace ......"'
-		bat 'mkdir -p E:\\pipeline-workspace\\open-mrs'
+		bat 'mkdir -p E:\\pipeline-workspace\\open-mrs-2'
 		bat 'echo "...... Cloning code into workspace ......"'
 		scm	'git clone https://github.com/PrashantGitRepo/openmrs-core.git'
       }
