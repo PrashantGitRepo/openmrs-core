@@ -4,9 +4,14 @@ pipeline {
     stage('Code Checkout') {
       steps {
         ws(dir: 'E:\\pipeline-workspace\\open-mrs') {
-          bat 'CD E:\\pipeline-workspace\\open-mrs'
           git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', branch: 'master', poll: true)
         }
+		bat 'echo "...... Creating workspace ......"'
+		bat 'mkdir -p E:\\pipeline-workspace\\open-mrs'
+		bat 'echo "...... Cloning code into workspace ......"'
+		bat	'git config --global user.email 'email@address.com' &&
+			git config --global user.name 'myname' &&
+			git config --global push.default simple'
 
       }
     }
