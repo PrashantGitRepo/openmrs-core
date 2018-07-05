@@ -6,10 +6,10 @@ pipeline {
         bat 'echo "...... Creating workspace ......"'
 		bat 'mkdir -p E:\\pipeline-workspace\\open-mrs'
 		bat 'echo "...... Cloning code into workspace ......"'
-		bat	'git config --global user.email 'prashant.0542@gmail.com' &&
-			git config --global user.name 'vickyru' &&
-			git config --global push.default simple &&
-			git clone https://github.com/PrashantGitRepo/openmrs-core.git'
+		bat	'git config --global user.email 'prashant.0542@gmail.com''
+		bat	'git config --global user.name 'vickyru''
+		bat	'git config --global push.default simple'
+		bat	'git clone https://github.com/PrashantGitRepo/openmrs-core.git'
       }
     }
     stage('Building Code') {
