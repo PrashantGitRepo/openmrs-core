@@ -25,8 +25,8 @@ pipeline {
     }
 	stage('Start Tomcat Server') {
 	  steps {
-		bat 'CALL C:\\apache-tomcat-7.0.88\\bin\\startup.bat'
-		bat 'PAUSE'
+		bat 'C:\\apache-tomcat-7.0.88\\bin\\catalina.bat stop'
+		bat 'C:\\apache-tomcat-7.0.88\\bin\\catalina.bat start'
 	  }
 	}
   }
