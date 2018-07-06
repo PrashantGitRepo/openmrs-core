@@ -4,7 +4,6 @@ pipeline {
     stage('Code Checkout') {
       steps {
         ws(dir: 'E:\\pipeline-workspace\\open-mrs') {
-          bat 'CD E:\\pipeline-workspace\\open-mrs'
           git(url: 'https://github.com/PrashantGitRepo/openmrs-core.git', branch: 'master', poll: true)
         }
 
@@ -12,13 +11,12 @@ pipeline {
     }
     stage('Building Code') {
       steps {
-		bat 'CD E:\\pipeline-workspace\\open-mrs && mvn clean compile package -DskipTests'
-        fileExists 'openmrs.war'
+            bat 'mvn clean compile package -DskipTests'
+            fileExists 'openmrs.war'
       }
     }
     stage('Deploy war') {
       steps {
-        bat 'CD E:\\pipeline-workspace\\open-mrs'
 		bat 'COPY /Y E:\\pipeline-workspace\\open-mrs\\webapp\\target\\openmrs.war C:\\apache-tomcat-7.0.88\\webapps'
       }
     }
